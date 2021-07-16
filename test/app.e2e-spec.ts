@@ -61,5 +61,9 @@ describe('AppController (e2e)', () => {
         .send({ title: 'Updated Test' })
         .expect(200);
     });
+
+    it('DELETE', () => {
+      return request(app.getHttpServer()).delete('/movies/1').expect(200);
+    });
   });
 });
