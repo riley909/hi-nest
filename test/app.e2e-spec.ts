@@ -62,7 +62,7 @@ describe('AppController (e2e)', () => {
       return request(app.getHttpServer()).get('/movies/999').expect(404);
     });
 
-    it('PATCH', () => {
+    it('PATCH 200', () => {
       return request(app.getHttpServer())
         .patch('/movies/1')
         .send({ title: 'Updated Test' })
