@@ -33,5 +33,9 @@ describe('AppController (e2e)', () => {
         .send({ title: 'Test', year: 2021, genres: ['test'] })
         .expect(201);
     });
+
+    it('DELETE', () => {
+      return request(app.getHttpServer()).delete('/movies').expect(404);
+    });
   });
 });
