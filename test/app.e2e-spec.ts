@@ -41,6 +41,13 @@ describe('AppController (e2e)', () => {
         .expect(201);
     });
 
+    it('POST 400', () => {
+      return request(app.getHttpServer())
+        .post('/movies')
+        .send({ title: 'Test', year: 2021, genres: ['test'], other: 'thing' })
+        .expect(400);
+    });
+
     it('DELETE', () => {
       return request(app.getHttpServer()).delete('/movies').expect(404);
     });
