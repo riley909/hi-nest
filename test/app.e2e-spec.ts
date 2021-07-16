@@ -34,7 +34,7 @@ describe('AppController (e2e)', () => {
       return request(app.getHttpServer()).get('/movies').expect(200).expect([]);
     });
 
-    it('POST', () => {
+    it('POST 201', () => {
       return request(app.getHttpServer())
         .post('/movies')
         .send({ title: 'Test', year: 2021, genres: ['test'] })
